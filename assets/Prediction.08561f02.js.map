@@ -1,1 +1,0 @@
-{"version":3,"file":"Prediction.08561f02.js","sources":["../../src/demo/views/Prediction.tsx"],"sourcesContent":["import View from './View';\n\nexport default function Prediction(props) {\n  return <View {...props} workspace=\"prediction\" />;\n}\n"],"names":["props"],"mappings":"ohBAEA,WAAmCA,EAAO,CACjC,SAAC,EAAD,OAAUA,GAAV,CAAiB,UAAU,YAAA,EAAlC,CACD"}
