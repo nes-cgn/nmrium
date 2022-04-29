@@ -477,16 +477,16 @@ const __vitePreload = function preload(baseModule, deps) {
   })).then(() => baseModule());
 };
 const possibleViews = {
-  Exam: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exam.0ec32315.js"), true ? ["assets/Exam.0ec32315.js","assets/vendor.930a5679.js"] : void 0))),
-  Exercise: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exercise.b9de2b60.js"), true ? ["assets/Exercise.b9de2b60.js","assets/vendor.930a5679.js"] : void 0))),
-  SingleView: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./SingleView.a95370d9.js"), true ? ["assets/SingleView.a95370d9.js","assets/vendor.930a5679.js"] : void 0))),
+  Exam: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exam.22d3a3a4.js"), true ? ["assets/Exam.22d3a3a4.js","assets/vendor.930a5679.js"] : void 0))),
+  Exercise: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exercise.c5263896.js"), true ? ["assets/Exercise.c5263896.js","assets/vendor.930a5679.js"] : void 0))),
+  SingleView: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./SingleView.f0ea4ac1.js"), true ? ["assets/SingleView.f0ea4ac1.js","assets/vendor.930a5679.js"] : void 0))),
   Test: react.exports.memo(react.exports.lazy(() => __vitePreload(() => Promise.resolve().then(function() {
     return Test$1;
   }), true ? void 0 : void 0))),
-  View: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./View.dc6e6e7d.js"), true ? ["assets/View.dc6e6e7d.js","assets/vendor.930a5679.js"] : void 0))),
-  TwoInstances: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./TwoInstances.f7a46d69.js"), true ? ["assets/TwoInstances.f7a46d69.js","assets/vendor.930a5679.js"] : void 0))),
-  Teaching: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Teaching.61b6a243.js"), true ? ["assets/Teaching.61b6a243.js","assets/vendor.930a5679.js"] : void 0))),
-  Prediction: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Prediction.848e347d.js"), true ? ["assets/Prediction.848e347d.js","assets/View.dc6e6e7d.js","assets/vendor.930a5679.js"] : void 0)))
+  View: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./View.008e212e.js"), true ? ["assets/View.008e212e.js","assets/vendor.930a5679.js"] : void 0))),
+  TwoInstances: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./TwoInstances.4b4e79a0.js"), true ? ["assets/TwoInstances.4b4e79a0.js","assets/vendor.930a5679.js"] : void 0))),
+  Teaching: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Teaching.3ac7e4e3.js"), true ? ["assets/Teaching.3ac7e4e3.js","assets/vendor.930a5679.js"] : void 0))),
+  Prediction: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Prediction.b5604ef9.js"), true ? ["assets/Prediction.b5604ef9.js","assets/View.008e212e.js","assets/vendor.930a5679.js"] : void 0)))
 };
 const mainPanelCss = css`
   position: relative;
@@ -7627,7 +7627,8 @@ const embedded = {
     }
   },
   controllers: basic.controllers,
-  formatting: basic.formatting
+  formatting: basic.formatting,
+  databases: basic.databases
 };
 const exercise = {
   version: 1,
@@ -29707,7 +29708,7 @@ function AssignmentProvider(props) {
   });
 }
 const docsBaseUrl = "https://docs.nmrium.org";
-var versionInfo = { version: "git-4031ee64ec15cf8dab70531ee4d792c91a844010" };
+var versionInfo = { version: "git-965deff92c73fe1a8049886c12b0b874aafad0af" };
 function Logo({
   width = 100,
   height = 100
@@ -33188,7 +33189,7 @@ var Test$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty
   __proto__: null,
   "default": Test
 }, Symbol.toStringTag, { value: "Module" }));
-const TestHighlight = react.exports.lazy(() => __vitePreload(() => import("./TestHighlight.66cf7768.js"), true ? ["assets/TestHighlight.66cf7768.js","assets/vendor.930a5679.js"] : void 0));
+const TestHighlight = react.exports.lazy(() => __vitePreload(() => import("./TestHighlight.9ac3ed22.js"), true ? ["assets/TestHighlight.9ac3ed22.js","assets/vendor.930a5679.js"] : void 0));
 function TestRoutes() {
   return /* @__PURE__ */ jsx$1(react.exports.Suspense, {
     fallback: null,
@@ -33227,4 +33228,4 @@ root.render(/* @__PURE__ */ jsx$1(HashRouter, {
   })
 }));
 export { HighlightProvider as H, NMRium$1 as N, copyTextToClipboard as c, useHighlight as u };
-//# sourceMappingURL=index.1fcec36c.js.map
+//# sourceMappingURL=index.3a5c1761.js.map

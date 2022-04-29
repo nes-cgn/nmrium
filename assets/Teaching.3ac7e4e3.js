@@ -1,5 +1,5 @@
 import { r as react, e as jsxs, d as jsx } from "./vendor.930a5679.js";
-import { N as NMRium } from "./index.1fcec36c.js";
+import { N as NMRium } from "./index.3a5c1761.js";
 async function loadData(file) {
   const response = await fetch(file);
   checkStatus(response);
@@ -97,4 +97,4 @@ function Teaching(props) {
   });
 }
 export { Teaching as default };
-//# sourceMappingURL=Teaching.61b6a243.js.map
+//# sourceMappingURL=Teaching.3ac7e4e3.js.map

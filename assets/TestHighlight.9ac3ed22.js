@@ -18,7 +18,7 @@ var __spreadValues = (a, b) => {
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 import { a as jsx, j as jsxs, c as css } from "./vendor.930a5679.js";
-import { H as HighlightProvider, u as useHighlight } from "./index.1fcec36c.js";
+import { H as HighlightProvider, u as useHighlight } from "./index.3a5c1761.js";
 const tableOne = [{
   id: "A",
   highlight: [1, 2]
@@ -129,4 +129,4 @@ function Tr(props) {
   }), value.id);
 }
 export { TestHighlight as default };
-//# sourceMappingURL=TestHighlight.66cf7768.js.map
+//# sourceMappingURL=TestHighlight.9ac3ed22.js.map
