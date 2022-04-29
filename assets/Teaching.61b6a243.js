@@ -1,5 +1,5 @@
 import { r as react, e as jsxs, d as jsx } from "./vendor.930a5679.js";
-import { N as NMRium } from "./index.5624898c.js";
+import { N as NMRium } from "./index.1fcec36c.js";
 async function loadData(file) {
   const response = await fetch(file);
   checkStatus(response);
@@ -12,15 +12,13 @@ function checkStatus(response) {
   }
   return response;
 }
-function View(props) {
+function Teaching(props) {
   const [data, setData] = react.exports.useState();
   const {
     file,
     title,
     baseURL
   } = props;
-  const [callbackData, setCallbackData] = react.exports.useState([]);
-  const [isCallbackVisible, showCallback] = react.exports.useState(false);
   react.exports.useEffect(() => {
     if (file) {
       void loadData(file).then((d) => {
@@ -28,23 +26,9 @@ function View(props) {
         setData(_d);
       });
     } else {
-      setData(void 0);
+      setData({});
     }
   }, [baseURL, file, props]);
-  const changeHandler = react.exports.useCallback((logData) => {
-    setCallbackData((prevLogs) => {
-      return prevLogs.concat({
-        datetime: new Date().toLocaleTimeString(),
-        data: logData
-      });
-    });
-  }, []);
-  react.exports.useCallback(() => {
-    showCallback((prevflag) => !prevflag);
-  }, []);
-  react.exports.useCallback(() => {
-    setCallbackData([]);
-  }, []);
   return /* @__PURE__ */ jsxs("div", {
     style: {
       height: "100%",
@@ -74,32 +58,43 @@ function View(props) {
           fontSize: "0.7142em"
         },
         children: title
-      }), false]
+      })]
     }), /* @__PURE__ */ jsx("div", {
       style: {
         height: "calc(100% - 75px)",
         display: "flex",
         width: "100%"
       },
-      children: /* @__PURE__ */ jsxs("div", {
+      children: /* @__PURE__ */ jsx("div", {
         style: {
           display: "flex",
           flexDirection: "row",
           width: "100%"
         },
-        children: [/* @__PURE__ */ jsx("div", {
+        children: /* @__PURE__ */ jsx("div", {
           style: {
-            width: isCallbackVisible ? "75%" : "100%"
+            width: "100%"
           },
           children: /* @__PURE__ */ jsx(NMRium, {
             data,
-            onDataChange: changeHandler,
-            workspace: props.workspace || null
+            preferences: {
+              general: {
+                disableMultipletAnalysis: true,
+                hideSetSumFromMolecule: true
+              },
+              panels: {
+                hideInformationPanel: true,
+                hidePeaksPanel: true,
+                hideIntegralsPanel: true,
+                hideFiltersPanel: true,
+                hideMultipleSpectraAnalysisPanel: true
+              }
+            }
           })
-        }), false]
+        })
       })
     })]
   });
 }
-export { View as default };
-//# sourceMappingURL=View.5c0d7dc2.js.map
+export { Teaching as default };
+//# sourceMappingURL=Teaching.61b6a243.js.map

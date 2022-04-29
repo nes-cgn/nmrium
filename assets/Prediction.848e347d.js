@@ -17,13 +17,13 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-import View from "./View.5c0d7dc2.js";
+import View from "./View.dc6e6e7d.js";
 import { d as jsx } from "./vendor.930a5679.js";
-import "./index.5624898c.js";
+import "./index.1fcec36c.js";
 function Prediction(props) {
   return /* @__PURE__ */ jsx(View, __spreadProps(__spreadValues({}, props), {
     workspace: "prediction"
   }));
 }
 export { Prediction as default };
-//# sourceMappingURL=Prediction.2be9d773.js.map
+//# sourceMappingURL=Prediction.848e347d.js.map
