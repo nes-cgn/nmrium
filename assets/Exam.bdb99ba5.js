@@ -1,5 +1,5 @@
 import { r as react, Q as full, j as jsxs, a as jsx, b4 as StructureEditor, as as MF, c as css, a_ as FaCheck, cx as FaRegCopy } from "./vendor.1a8b6e6b.js";
-import { N as NMRium, c as copyTextToClipboard } from "./index.3e8b4e21.js";
+import { N as NMRium, c as copyTextToClipboard } from "./index.d5ef5b83.js";
 let answers = JSON.parse(localStorage.getItem("nmrium-exams") || "{}");
 async function loadData(file) {
   const response = await fetch(file);
@@ -249,4 +249,4 @@ function Exam(props) {
   });
 }
 export { Exam as default };
-//# sourceMappingURL=Exam.32cca39d.js.map
+//# sourceMappingURL=Exam.bdb99ba5.js.map

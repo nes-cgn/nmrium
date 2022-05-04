@@ -18,7 +18,7 @@ var __spreadValues = (a, b) => {
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 import { r as react, Q as full, j as jsxs, a as jsx, b4 as StructureEditor, as as MF, c as css } from "./vendor.1a8b6e6b.js";
-import { N as NMRium } from "./index.3e8b4e21.js";
+import { N as NMRium } from "./index.d5ef5b83.js";
 let answers = JSON.parse(localStorage.getItem("nmrium-exercises") || "{}");
 async function loadData(file) {
   const response = await fetch(file);
@@ -231,4 +231,4 @@ function Exercise(props) {
   });
 }
 export { Exercise as default };
-//# sourceMappingURL=Exercise.20e2e1c6.js.map
+//# sourceMappingURL=Exercise.04e04f7b.js.map
