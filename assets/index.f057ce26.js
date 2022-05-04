@@ -477,16 +477,16 @@ const __vitePreload = function preload(baseModule, deps) {
   })).then(() => baseModule());
 };
 const possibleViews = {
-  Exam: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exam.ec4ae691.js"), true ? ["assets/Exam.ec4ae691.js","assets/vendor.2184168d.js"] : void 0))),
-  Exercise: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exercise.5927eb0c.js"), true ? ["assets/Exercise.5927eb0c.js","assets/vendor.2184168d.js"] : void 0))),
-  SingleView: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./SingleView.72e0b025.js"), true ? ["assets/SingleView.72e0b025.js","assets/vendor.2184168d.js"] : void 0))),
+  Exam: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exam.9581e9e0.js"), true ? ["assets/Exam.9581e9e0.js","assets/vendor.2184168d.js"] : void 0))),
+  Exercise: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exercise.8cf7c488.js"), true ? ["assets/Exercise.8cf7c488.js","assets/vendor.2184168d.js"] : void 0))),
+  SingleView: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./SingleView.f71e8640.js"), true ? ["assets/SingleView.f71e8640.js","assets/vendor.2184168d.js"] : void 0))),
   Test: react.exports.memo(react.exports.lazy(() => __vitePreload(() => Promise.resolve().then(function() {
     return Test$1;
   }), true ? void 0 : void 0))),
-  View: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./View.d2da1670.js"), true ? ["assets/View.d2da1670.js","assets/vendor.2184168d.js"] : void 0))),
-  TwoInstances: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./TwoInstances.0ab6d1c5.js"), true ? ["assets/TwoInstances.0ab6d1c5.js","assets/vendor.2184168d.js"] : void 0))),
-  Teaching: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Teaching.49b8978f.js"), true ? ["assets/Teaching.49b8978f.js","assets/vendor.2184168d.js"] : void 0))),
-  Prediction: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Prediction.fff7ecaf.js"), true ? ["assets/Prediction.fff7ecaf.js","assets/View.d2da1670.js","assets/vendor.2184168d.js"] : void 0)))
+  View: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./View.f11b0823.js"), true ? ["assets/View.f11b0823.js","assets/vendor.2184168d.js"] : void 0))),
+  TwoInstances: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./TwoInstances.f0f3d6a4.js"), true ? ["assets/TwoInstances.f0f3d6a4.js","assets/vendor.2184168d.js"] : void 0))),
+  Teaching: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Teaching.a26fca80.js"), true ? ["assets/Teaching.a26fca80.js","assets/vendor.2184168d.js"] : void 0))),
+  Prediction: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Prediction.1a6f043f.js"), true ? ["assets/Prediction.1a6f043f.js","assets/View.f11b0823.js","assets/vendor.2184168d.js"] : void 0)))
 };
 const mainPanelCss = css`
   position: relative;
@@ -1984,7 +1984,7 @@ function mapPeaks(peaks, datum) {
       originalX: newPeak.x - shiftX2,
       x: newPeak.x,
       y: newPeak.y,
-      width: newPeak.width
+      width: newPeak.width * datum.info.originFrequency
     });
     return acc;
   }, []);
@@ -12280,7 +12280,7 @@ const peaksDefaultValues = {
   showDeltaHz: false,
   deltaHzFormat: "0.00",
   showPeakWidth: false,
-  peakWidthFormat: "00.0000",
+  peakWidthFormat: "0.00",
   showIntensity: true,
   intensityFormat: "0.00"
 };
@@ -21365,7 +21365,7 @@ const formatFields$2 = [{
   formatController: "deltaHzFormat"
 }, {
   id: 5,
-  label: "Peak Width",
+  label: "Peak Width (Hz)",
   checkController: "showPeakWidth",
   formatController: "peakWidthFormat"
 }, {
@@ -21513,7 +21513,7 @@ function PeaksTable({
   }, {
     showWhen: "showPeakWidth",
     index: 6,
-    Header: "Peak Width",
+    Header: "Width (Hz)",
     accessor: (row) => FormatNumber(row.peakWidth, peaksPreferences.peakWidthFormat)
   }], [format2, peaksPreferences, saveDeltaPPMRefsHandler]);
   const initialColumns = react.exports.useMemo(() => [{
@@ -30007,7 +30007,7 @@ function AssignmentProvider(props) {
   });
 }
 const docsBaseUrl = "https://docs.nmrium.org";
-var versionInfo = { version: "git-c071f5ad9143be406a8cb19e743e2fb03444a40e" };
+var versionInfo = { version: "git-43d6c3b82c7bb015e420906ddc65004bf237f34d" };
 function Logo({
   width = 100,
   height = 100
@@ -33491,7 +33491,7 @@ var Test$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty
   __proto__: null,
   "default": Test
 }, Symbol.toStringTag, { value: "Module" }));
-const TestHighlight = react.exports.lazy(() => __vitePreload(() => import("./TestHighlight.0e116d31.js"), true ? ["assets/TestHighlight.0e116d31.js","assets/vendor.2184168d.js"] : void 0));
+const TestHighlight = react.exports.lazy(() => __vitePreload(() => import("./TestHighlight.90e2578e.js"), true ? ["assets/TestHighlight.90e2578e.js","assets/vendor.2184168d.js"] : void 0));
 function TestRoutes() {
   return /* @__PURE__ */ jsx$1(react.exports.Suspense, {
     fallback: null,
@@ -33530,4 +33530,4 @@ root.render(/* @__PURE__ */ jsx$1(HashRouter, {
   })
 }));
 export { HighlightProvider as H, NMRium$1 as N, copyTextToClipboard as c, useHighlight as u };
-//# sourceMappingURL=index.b258714f.js.map
+//# sourceMappingURL=index.f057ce26.js.map
