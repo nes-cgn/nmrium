@@ -477,16 +477,16 @@ const __vitePreload = function preload(baseModule, deps) {
   })).then(() => baseModule());
 };
 const possibleViews = {
-  Exam: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exam.bdb99ba5.js"), true ? ["assets/Exam.bdb99ba5.js","assets/vendor.1a8b6e6b.js"] : void 0))),
-  Exercise: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exercise.04e04f7b.js"), true ? ["assets/Exercise.04e04f7b.js","assets/vendor.1a8b6e6b.js"] : void 0))),
-  SingleView: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./SingleView.a63cecca.js"), true ? ["assets/SingleView.a63cecca.js","assets/vendor.1a8b6e6b.js"] : void 0))),
+  Exam: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exam.2d9ae7c2.js"), true ? ["assets/Exam.2d9ae7c2.js","assets/vendor.1a8b6e6b.js"] : void 0))),
+  Exercise: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exercise.1b14700a.js"), true ? ["assets/Exercise.1b14700a.js","assets/vendor.1a8b6e6b.js"] : void 0))),
+  SingleView: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./SingleView.ddb03d8a.js"), true ? ["assets/SingleView.ddb03d8a.js","assets/vendor.1a8b6e6b.js"] : void 0))),
   Test: react.exports.memo(react.exports.lazy(() => __vitePreload(() => Promise.resolve().then(function() {
     return Test$1;
   }), true ? void 0 : void 0))),
-  View: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./View.53c2115e.js"), true ? ["assets/View.53c2115e.js","assets/vendor.1a8b6e6b.js"] : void 0))),
-  TwoInstances: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./TwoInstances.c2112ed5.js"), true ? ["assets/TwoInstances.c2112ed5.js","assets/vendor.1a8b6e6b.js"] : void 0))),
-  Teaching: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Teaching.59f7dbc8.js"), true ? ["assets/Teaching.59f7dbc8.js","assets/vendor.1a8b6e6b.js"] : void 0))),
-  Prediction: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Prediction.c29f5593.js"), true ? ["assets/Prediction.c29f5593.js","assets/View.53c2115e.js","assets/vendor.1a8b6e6b.js"] : void 0)))
+  View: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./View.ba255579.js"), true ? ["assets/View.ba255579.js","assets/vendor.1a8b6e6b.js"] : void 0))),
+  TwoInstances: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./TwoInstances.6b9258e5.js"), true ? ["assets/TwoInstances.6b9258e5.js","assets/vendor.1a8b6e6b.js"] : void 0))),
+  Teaching: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Teaching.28d93038.js"), true ? ["assets/Teaching.28d93038.js","assets/vendor.1a8b6e6b.js"] : void 0))),
+  Prediction: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Prediction.11d4ed8f.js"), true ? ["assets/Prediction.11d4ed8f.js","assets/View.ba255579.js","assets/vendor.1a8b6e6b.js"] : void 0)))
 };
 const mainPanelCss = css`
   position: relative;
@@ -3377,6 +3377,7 @@ function getAtomsFromMF(mf) {
 function initMolecule(options2 = {}) {
   const key = options2.key || generateID();
   const molfile = options2.molfile || "";
+  const isFloat = typeof (options2 == null ? void 0 : options2.isFloat) === "boolean" ? options2.isFloat : false;
   const mol = full.Molecule.fromMolfile(molfile);
   const mfInfo = mol.getMolecularFormula();
   return {
@@ -3387,7 +3388,7 @@ function initMolecule(options2 = {}) {
     mw: mfInfo.relativeWeight,
     svg: mol.toSVG(50, 50),
     atoms: getAtomsFromMF(mfInfo.formula),
-    isFloat: false
+    isFloat
   };
 }
 function toJSON$2(molecule) {
@@ -6091,6 +6092,7 @@ function setMolfile(molecules, molfile, key) {
   } else if (fragments.length === 1) {
     const fragment = fragments[0];
     const _mol = initMolecule({
+      isFloat: true,
       molfile: fragment.toMolfileV3(),
       key
     });
@@ -30000,7 +30002,7 @@ function AssignmentProvider(props) {
   });
 }
 const docsBaseUrl = "https://docs.nmrium.org";
-var versionInfo = { version: "git-6e293a81de73bcd3f681ac3f59e404b48f7934bc" };
+var versionInfo = { version: "git-64fd971d746f8690534bba8606595dde045eaa60" };
 function Logo({
   width = 100,
   height = 100
@@ -33484,7 +33486,7 @@ var Test$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty
   __proto__: null,
   "default": Test
 }, Symbol.toStringTag, { value: "Module" }));
-const TestHighlight = react.exports.lazy(() => __vitePreload(() => import("./TestHighlight.ee2ed568.js"), true ? ["assets/TestHighlight.ee2ed568.js","assets/vendor.1a8b6e6b.js"] : void 0));
+const TestHighlight = react.exports.lazy(() => __vitePreload(() => import("./TestHighlight.3b64818c.js"), true ? ["assets/TestHighlight.3b64818c.js","assets/vendor.1a8b6e6b.js"] : void 0));
 function TestRoutes() {
   return /* @__PURE__ */ jsx$1(react.exports.Suspense, {
     fallback: null,
@@ -33523,4 +33525,4 @@ root.render(/* @__PURE__ */ jsx$1(HashRouter, {
   })
 }));
 export { HighlightProvider as H, NMRium$1 as N, copyTextToClipboard as c, useHighlight as u };
-//# sourceMappingURL=index.d5ef5b83.js.map
+//# sourceMappingURL=index.d208c3b9.js.map
