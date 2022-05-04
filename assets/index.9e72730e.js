@@ -477,16 +477,16 @@ const __vitePreload = function preload(baseModule, deps) {
   })).then(() => baseModule());
 };
 const possibleViews = {
-  Exam: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exam.3b68229d.js"), true ? ["assets/Exam.3b68229d.js","assets/vendor.5045b93b.js"] : void 0))),
-  Exercise: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exercise.c9d0d754.js"), true ? ["assets/Exercise.c9d0d754.js","assets/vendor.5045b93b.js"] : void 0))),
-  SingleView: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./SingleView.9bcb6488.js"), true ? ["assets/SingleView.9bcb6488.js","assets/vendor.5045b93b.js"] : void 0))),
+  Exam: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exam.fba92553.js"), true ? ["assets/Exam.fba92553.js","assets/vendor.5045b93b.js"] : void 0))),
+  Exercise: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Exercise.786f1938.js"), true ? ["assets/Exercise.786f1938.js","assets/vendor.5045b93b.js"] : void 0))),
+  SingleView: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./SingleView.7db9b79b.js"), true ? ["assets/SingleView.7db9b79b.js","assets/vendor.5045b93b.js"] : void 0))),
   Test: react.exports.memo(react.exports.lazy(() => __vitePreload(() => Promise.resolve().then(function() {
     return Test$1;
   }), true ? void 0 : void 0))),
-  View: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./View.3f28c6bc.js"), true ? ["assets/View.3f28c6bc.js","assets/vendor.5045b93b.js"] : void 0))),
-  TwoInstances: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./TwoInstances.711b0068.js"), true ? ["assets/TwoInstances.711b0068.js","assets/vendor.5045b93b.js"] : void 0))),
-  Teaching: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Teaching.cc21e6f1.js"), true ? ["assets/Teaching.cc21e6f1.js","assets/vendor.5045b93b.js"] : void 0))),
-  Prediction: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Prediction.1a50de94.js"), true ? ["assets/Prediction.1a50de94.js","assets/View.3f28c6bc.js","assets/vendor.5045b93b.js"] : void 0)))
+  View: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./View.f6edcd3c.js"), true ? ["assets/View.f6edcd3c.js","assets/vendor.5045b93b.js"] : void 0))),
+  TwoInstances: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./TwoInstances.26802f47.js"), true ? ["assets/TwoInstances.26802f47.js","assets/vendor.5045b93b.js"] : void 0))),
+  Teaching: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Teaching.cde87bb8.js"), true ? ["assets/Teaching.cde87bb8.js","assets/vendor.5045b93b.js"] : void 0))),
+  Prediction: react.exports.memo(react.exports.lazy(() => __vitePreload(() => import("./Prediction.3a247f89.js"), true ? ["assets/Prediction.3a247f89.js","assets/View.f6edcd3c.js","assets/vendor.5045b93b.js"] : void 0)))
 };
 const mainPanelCss = css`
   position: relative;
@@ -29708,7 +29708,7 @@ function AssignmentProvider(props) {
   });
 }
 const docsBaseUrl = "https://docs.nmrium.org";
-var versionInfo = { version: "git-dc593088cc95f8a29dcfb74ac2494bf06cbd5dd5" };
+var versionInfo = { version: "git-902993d8ba8ecef22ea85c75a506510a0d86a677" };
 function Logo({
   width = 100,
   height = 100
@@ -33189,7 +33189,7 @@ var Test$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty
   __proto__: null,
   "default": Test
 }, Symbol.toStringTag, { value: "Module" }));
-const TestHighlight = react.exports.lazy(() => __vitePreload(() => import("./TestHighlight.fe89249e.js"), true ? ["assets/TestHighlight.fe89249e.js","assets/vendor.5045b93b.js"] : void 0));
+const TestHighlight = react.exports.lazy(() => __vitePreload(() => import("./TestHighlight.10da2452.js"), true ? ["assets/TestHighlight.10da2452.js","assets/vendor.5045b93b.js"] : void 0));
 function TestRoutes() {
   return /* @__PURE__ */ jsx$1(react.exports.Suspense, {
     fallback: null,
@@ -33228,4 +33228,4 @@ root.render(/* @__PURE__ */ jsx$1(HashRouter, {
   })
 }));
 export { HighlightProvider as H, NMRium$1 as N, copyTextToClipboard as c, useHighlight as u };
-//# sourceMappingURL=index.c37190e3.js.map
+//# sourceMappingURL=index.9e72730e.js.map

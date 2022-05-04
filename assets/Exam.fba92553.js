@@ -1,25 +1,6 @@
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-import { r as react, Q as full, j as jsxs, a as jsx, b2 as StructureEditor, am as MF, c as css } from "./vendor.5045b93b.js";
-import { N as NMRium } from "./index.c37190e3.js";
-let answers = JSON.parse(localStorage.getItem("nmrium-exercises") || "{}");
+import { r as react, Q as full, j as jsxs, a as jsx, b2 as StructureEditor, am as MF, c as css, aY as FaCheck, cv as FaRegCopy } from "./vendor.5045b93b.js";
+import { N as NMRium, c as copyTextToClipboard } from "./index.9e72730e.js";
+let answers = JSON.parse(localStorage.getItem("nmrium-exams") || "{}");
 async function loadData(file) {
   const response = await fetch(file);
   checkStatus(response);
@@ -32,24 +13,14 @@ function checkStatus(response) {
   }
   return response;
 }
-const titleCss = css`
-  text-transform: none;
-  margin: 0;
-  padding: 5px;
-  background-color: white;
-  font-size: 14px;
-  color: #3e3e3e;
-
-  p {
-    font-size: 10px;
-    margin: 0px;
-  }
-`;
 const mainContainer = css`
   display: flex;
   flex-direction: column;
   max-height: 100%;
   overflow: hidden;
+`;
+const nmrContainer = css`
+  height: 50%;
 `;
 const bottomContainer = css`
   display: flex;
@@ -76,12 +47,31 @@ const resultContainer = css`
   height: 80%;
   position: relative;
 `;
-const structureEditorCss = css`
+const copyButton = css`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 40px;
+  outline: none;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: green;
+    color: white;
+  }
+`;
+const structureEditor = css`
   background-color: white;
   flex: 1;
   overflow: auto;
 `;
-const showButtonCss = css`
+const showButton = css`
   outline: none;
   border: none;
   border-top: 0.55px solid #c1c1c1;
@@ -96,17 +86,60 @@ const showButtonCss = css`
     background-color: #00b707;
   }
 `;
+const titleCss = css`
+  text-transform: none;
+  margin: 0;
+  padding: 5px;
+  background-color: white;
+  font-size: 14px;
+  color: #3e3e3e;
+
+  p {
+    font-size: 10px;
+    margin: 0px;
+  }
+`;
+const resultCss = css`
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+`;
 const styles = css`
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 10px;
   margin-left: 30px;
+  }
 `;
-function Exercise(props) {
+const CopyButton = ({
+  result
+}) => {
+  const [isCopied, setCopyFlag] = react.exports.useState(false);
+  const saveToClipboardHandler = react.exports.useCallback(() => {
+    void (async () => {
+      const success = await copyTextToClipboard(result);
+      setCopyFlag(success);
+      setTimeout(() => {
+        setCopyFlag(false);
+      }, 1e3);
+    })();
+  }, [result]);
+  return /* @__PURE__ */ jsx("button", {
+    type: "button",
+    css: copyButton,
+    onClick: saveToClipboardHandler,
+    children: isCopied ? /* @__PURE__ */ jsx(FaCheck, {}) : /* @__PURE__ */ jsx(FaRegCopy, {})
+  });
+};
+function Exam(props) {
   var _a, _b;
   const [data, setData] = react.exports.useState();
-  const [resultFlag, setResultFlag] = react.exports.useState(null);
+  const [result, setResult] = react.exports.useState(null);
   const [answerAreaVisible, showAnswerArea] = react.exports.useState(false);
   const {
     file,
@@ -118,12 +151,8 @@ function Exercise(props) {
       const MolResponse = full.Molecule.fromMolfile(response);
       const idCodeResponse = MolResponse.getIDCode();
       answers[data.answer.idCode] = idCodeResponse;
-      localStorage.setItem("nmrium-exercises", JSON.stringify(answers));
-      if (data.answer.idCode === idCodeResponse) {
-        setResultFlag(true);
-      } else {
-        setResultFlag(false);
-      }
+      localStorage.setItem("nmrium-exams", JSON.stringify(answers));
+      setResult(MolResponse.toSmiles());
     }
   }, [data]);
   react.exports.useEffect(() => {
@@ -165,6 +194,7 @@ function Exercise(props) {
     }), /* @__PURE__ */ jsxs("div", {
       css: mainContainer,
       children: [/* @__PURE__ */ jsx("div", {
+        css: nmrContainer,
         style: {
           height: answerAreaVisible ? "50%" : "calc(100% - 25px)"
         },
@@ -173,7 +203,7 @@ function Exercise(props) {
           workspace: "exercise"
         })
       }), /* @__PURE__ */ jsx("button", {
-        css: showButtonCss,
+        css: showButton,
         type: "button",
         onClick: showAnswerAreaHander,
         children: !answerAreaVisible ? "Show answer area" : "Hide answer area "
@@ -186,7 +216,7 @@ function Exercise(props) {
           visibility: "hidden"
         },
         children: [/* @__PURE__ */ jsx("div", {
-          css: structureEditorCss,
+          css: structureEditor,
           children: /* @__PURE__ */ jsx(StructureEditor, {
             svgMenu: true,
             fragment: false,
@@ -204,31 +234,19 @@ function Exercise(props) {
               },
               mf: (_b = data == null ? void 0 : data.answer) == null ? void 0 : _b.mf
             })
-          }), /* @__PURE__ */ jsx("div", {
+          }), /* @__PURE__ */ jsxs("div", {
             css: resultContainer,
-            children: /* @__PURE__ */ jsx("div", {
-              style: __spreadProps(__spreadValues({}, styles), {
-                backgroundColor: resultFlag == null ? "white" : resultFlag ? "green" : "red",
-                color: resultFlag == null ? "black" : "white",
-                width: "80%",
-                height: "80%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center"
-              }),
-              children: resultFlag == null ? /* @__PURE__ */ jsx("p", {
-                children: "Result"
-              }) : resultFlag === true ? /* @__PURE__ */ jsx("p", {
-                children: "Right Molecule"
-              }) : /* @__PURE__ */ jsx("p", {
-                children: "Wrong Molecule !!"
-              })
-            })
+            children: [/* @__PURE__ */ jsx(CopyButton, {
+              result
+            }), /* @__PURE__ */ jsx("div", {
+              css: resultCss,
+              children: result
+            })]
           })]
         })]
       })]
     })]
   });
 }
-export { Exercise as default };
-//# sourceMappingURL=Exercise.c9d0d754.js.map
+export { Exam as default };
+//# sourceMappingURL=Exam.fba92553.js.map

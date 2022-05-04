@@ -1,4 +1,4 @@
-import { N as NMRium } from "./index.c37190e3.js";
+import { N as NMRium } from "./index.9e72730e.js";
 import { j as jsxs, a as jsx } from "./vendor.5045b93b.js";
 const data1 = {
   spectra: [{
@@ -78,4 +78,4 @@ function TwoInstances(props) {
   });
 }
 export { TwoInstances as default };
-//# sourceMappingURL=TwoInstances.711b0068.js.map
+//# sourceMappingURL=TwoInstances.26802f47.js.map

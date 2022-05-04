@@ -1,5 +1,5 @@
 import { r as react, e as jsxs, d as jsx } from "./vendor.5045b93b.js";
-import { N as NMRium } from "./index.c37190e3.js";
+import { N as NMRium } from "./index.9e72730e.js";
 function SingleView(props) {
   const [data, setData] = react.exports.useState();
   const {
@@ -49,4 +49,4 @@ function SingleView(props) {
   });
 }
 export { SingleView as default };
-//# sourceMappingURL=SingleView.9bcb6488.js.map
+//# sourceMappingURL=SingleView.7db9b79b.js.map
